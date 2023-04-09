@@ -1,0 +1,14 @@
+.btn-none{
+  background: none;
+  border: none;
+}
+
+.fr{
+  position: absolute;
+  right: 0;
+}
+
+.b-n{
+  position: absolute;
+  bottom: 2%;
+}

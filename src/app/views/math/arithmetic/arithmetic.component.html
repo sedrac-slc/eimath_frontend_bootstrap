@@ -1,0 +1,183 @@
+<app-math-template>
+  <div id="mathContentCenter" class="pt-2">
+    <form [formGroup]="arithmeticForm" (ngSubmit)="solve()" class="mb-2">
+      <div class="form-group d-flex grip">
+        <button type="button" class="btn btn-outline-primary d-flex j-c-c a-i-c">
+          <i class='bx bx-cog'></i>
+        </button>
+        <input type="text" class="form-control mr-2" name="expression" formControlName="expression" required />
+        <button class="btn btn-outline-primary d-flex j-c-c a-i-c" type="submit">
+          <i class='bx bx-calculator'></i>
+          <span>calcular</span>
+        </button>
+      </div>
+      <section class="border border-primary p-2 rounded mt-2">
+        <div class="p-1">
+          <div class="row a-i-c">
+            <div class="col-md-4">
+              <select formControlName="methodFractionSum" id="" class="form-control tex-dark">
+                <ng-container *ngFor="let item of fractionSumOrSub">
+                  <option [value]="item.value" *ngIf=" item.selected; else notSelectedFracSum" selected>
+                    {{ item.desc }}
+                  </option>
+                  <ng-template #notSelectedFracSum>
+                    <option [value]="item.value">
+                      {{ item.desc }}
+                    </option>
+                  </ng-template>
+                </ng-container>
+              </select>
+            </div>
+            <div class="col-md-8">Operação de soma entre duas frações.</div>
+          </div>
+          <hr/>
+          <div class="row a-i-c">
+            <div class="col-md-4">
+              <select formControlName="methodFractionSub" id="" class="form-control tex-dark">
+                <ng-container *ngFor="let item of fractionSumOrSub">
+                  <option [value]="item.value" *ngIf=" item.selected; else notSelectedFracSub" selected>
+                    {{ item.desc }}
+                  </option>
+                  <ng-template #notSelectedFracSub>
+                    <option [value]="item.value">
+                      {{ item.desc }}
+                    </option>
+                  </ng-template>
+                </ng-container>
+              </select>
+            </div>
+            <div class="col-md-8">Operação de subtração entre duas frações.</div>
+          </div>
+          <hr class=""/>
+          <div class="row a-i-c">
+            <div class="col-md-4">
+              <select formControlName="methodArithmeticSum" id="" class="form-control tex-dark">
+                <ng-container *ngFor="let item of arithSumOrSub">
+                  <option [value]="item.value" *ngIf=" item.selected; else notSelectedArithSum" selected>
+                    {{ item.desc }}
+                  </option>
+                  <ng-template #notSelectedArithSum>
+                    <option [value]="item.value">
+                      {{ item.desc }}
+                    </option>
+                  </ng-template>
+                </ng-container>
+              </select>
+            </div>
+            <div class="col-md-8">Operação de soma entre infinitas frações.</div>
+          </div>
+          <hr/>
+          <div class="row a-i-c">
+            <div class="col-md-4">
+              <select formControlName="methodArithmeticSub" id="" class="form-control tex-dark">
+                <ng-container *ngFor="let item of arithSumOrSub">
+                  <option [value]="item.value" *ngIf=" item.selected; else notSelectedArithSub" selected>
+                    {{ item.desc }}
+                  </option>
+                  <ng-template #notSelectedArithSub>
+                    <option [value]="item.value">
+                      {{ item.desc }}
+                    </option>
+                  </ng-template>
+                </ng-container>
+              </select>
+            </div>
+            <div class="col-md-8">Operação de subtração entre infinitas frações.</div>
+          </div>
+          <hr/>
+          <div class="row a-i-c">
+            <div class="col-md-4">
+              <select formControlName="methodArithmeticSumOrSub" id="" class="form-control tex-dark">
+                <ng-container *ngFor="let item of arithSumOrSubFull">
+                  <option [value]="item.value" *ngIf=" item.selected; else notSelectedArithSubFull" selected>
+                    {{ item.desc }}
+                  </option>
+                  <ng-template #notSelectedArithSubFull>
+                    <option [value]="item.value">
+                      {{ item.desc }}
+                    </option>
+                  </ng-template>
+                </ng-container>
+              </select>
+            </div>
+            <div class="col-md-8">Operação de soma e subtração entre infinitas frações.</div>
+          </div>
+        </div>
+      </section>
+    </form>
+    <hr />
+    <section>
+      <div class="topico-content" id="topico-result">
+        <div class="topico-group">
+          <h5 class="topico">Resultado:</h5>
+          <div class="f-r topico-down-up">
+            <i class='bx bx-caret-down-circle bx-sm bx-fade-down-hover'></i>
+          </div>
+        </div>
+        <div class="topico-body">
+          <ng-container *ngFor="let step of mathResult.steps">
+            <section>
+              <div>{{ step.message }}</div>
+              <div class="text-center w-100" [innerHTML]="step.html"></div>
+            </section>
+          </ng-container>
+        </div>
+      </div>
+      <hr />
+      <section>
+        <div class="topico-group">
+          <h5 class="topico">
+            <i class="bx bx-info"></i>
+            <span>Intruções:</span>
+          </h5>
+          <div class="f-r topico-down-up">
+            <i class='bx bx-caret-down-circle bx-sm bx-fade-down-hover'></i>
+          </div>
+        </div>
+        <div class="topico-body">
+          <ol>
+            <li>
+              <p>Para o eimath resolver o problema de aritmética deves fornecer a expressão (esta deve ser uma expressão
+                válida para o eimathRegex) no formulário acima.</p>
+              <span>Aviso</span>
+              <ul>
+                <li>
+                  <i class='bx bx-checkbox-square'></i>
+                  <span>Se a expressão fornecida não é validado pelo eimathRegex, isto quer dizer que não irá resolver o
+                    problema.</span>
+                </li>
+                <li>
+                  <i class='bx bx-checkbox-square'></i>
+                  <span>Caso não saibas o que eimathRegex, <a href="/">clica aqui</a>.</span>
+                </li>
+              </ul>
+            </li>
+            <li class="mt-1">
+              <span>Opcional: podes parametrizar como desejas que a resolução seja executada, ciclando no botão de
+                configuração.</span>
+            </li>
+            <li class="mt-1">
+              <span>Para ver a resolução do problema apenas deves clicar no butão (calcular)</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <hr />
+      <section>
+        <div class="topico-group">
+          <h5 class="topico">
+            <i class="bx bx-info"></i>
+            <span>Conceitos:</span>
+          </h5>
+          <div class="f-r topico-down-up">
+            <i class='bx bx-caret-down-circle bx-sm bx-fade-down-hover'></i>
+          </div>
+          <div class="topico-body">
+
+          </div>
+        </div>
+      </section>
+
+    </section>
+  </div>
+</app-math-template>

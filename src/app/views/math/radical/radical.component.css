@@ -1,0 +1,27 @@
+@import "../arithmetic/arithmetic.component.css";
+
+.radical-group{
+  display: flex;
+  position: relative;
+}
+
+.radical-group .expoent{
+  position: absolute;
+  top: -9;
+  left: -4;
+}
+
+.radical-group .base{
+  border-top: 1px solid;
+  padding-right: 3px;
+}
+
+.fraction-group-radical{
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.fraction-group-radical.signal-simple .signal{
+  margin-top: -10px;
+}

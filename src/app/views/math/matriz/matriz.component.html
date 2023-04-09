@@ -1,0 +1,97 @@
+<app-math-template>
+  <div id="mathContentCenter" class="pt-2">
+    <form [formGroup]="matrizForm" (ngSubmit)="solve()" class="mb-2">
+      <div class="form-group d-flex grip">
+        <button type="button" class="btn btn-outline-primary d-flex j-c-c a-i-c">
+          <i class='bx bx-cog'></i>
+        </button>
+        <input type="text" class="form-control mr-2" name="expression" formControlName="expression" required />
+        <button class="btn btn-outline-primary d-flex j-c-c a-i-c" type="submit">
+          <i class='bx bx-calculator'></i>
+          <span>calcular</span>
+        </button>
+      </div>
+    </form>
+    <hr />
+    <section>
+      <div class="topico-content" id="topico-result">
+        <div class="topico-group">
+          <h5 class="topico">Resultado:</h5>
+          <div class="f-r topico-down-up">
+            <i class='bx bx-caret-down-circle bx-sm bx-fade-down-hover'></i>
+          </div>
+        </div>
+        <div class="topico-body">
+          <ng-container *ngFor="let step of mathResult.steps; index as i">
+            <section *ngIf="i > 0; else noMarin" class="mt-2">
+              <div>{{ step.message }}</div>
+              <div class="text-center w-100" [innerHTML]="step.html"></div>
+            </section>
+            <ng-template #noMarin>
+              <section>
+                <div>{{ step.message }}</div>
+                <div class="text-center w-100" [innerHTML]="step.html"></div>
+              </section>
+            </ng-template>
+          </ng-container>
+        </div>
+      </div>
+
+
+    </section>
+    <hr />
+    <section>
+      <div class="topico-group">
+        <h5 class="topico">
+          <i class="bx bx-info"></i>
+          <span>Intruções:</span>
+        </h5>
+        <div class="f-r topico-down-up">
+          <i class='bx bx-caret-down-circle bx-sm bx-fade-down-hover'></i>
+        </div>
+      </div>
+      <div class="topico-body">
+        <ol>
+          <li>
+            <p>Para o eimath resolver o problema de aritmética deves fornecer a expressão (esta deve ser uma expressão
+              válida para o eimathRegex) no formulário acima.</p>
+            <span>Aviso</span>
+            <ul>
+              <li>
+                <i class='bx bx-checkbox-square'></i>
+                <span>Se a expressão fornecida não é validado pelo eimathRegex, isto quer dizer que não irá resolver o
+                  problema.</span>
+              </li>
+              <li>
+                <i class='bx bx-checkbox-square'></i>
+                <span>Caso não saibas o que eimathRegex, <a href="/">clica aqui</a>.</span>
+              </li>
+            </ul>
+          </li>
+          <li class="mt-1">
+            <span>Opcional: podes parametrizar como desejas que a resolução seja executada, ciclando no botão de
+              configuração.</span>
+          </li>
+          <li class="mt-1">
+            <span>Para ver a resolução do problema apenas deves clicar no butão (calcular)</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+    <hr />
+    <section>
+      <div class="topico-group">
+        <h5 class="topico">
+          <i class="bx bx-info"></i>
+          <span>Conceitos:</span>
+        </h5>
+        <div class="f-r topico-down-up">
+          <i class='bx bx-caret-down-circle bx-sm bx-fade-down-hover'></i>
+        </div>
+        <div class="topico-body">
+
+        </div>
+      </div>
+    </section>
+  </div>
+</app-math-template>

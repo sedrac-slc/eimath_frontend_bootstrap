@@ -1,0 +1,77 @@
+<section class="bg-primary bg-lateral mb-5">
+  <div class="m-2">
+      <a class="t-d-n" routerLink="/">
+        <div class="bg-white rounded-circle">
+          <i class='bx bx-left-arrow-alt bx-md'></i>
+        </div>
+        <span class="text-white">voltar</span>
+      </a>
+  </div>
+</section>
+
+<section class="container bg-white border border-primary rounded  m-auto mt-5 w-50">
+  <h5 class="d-flex mt-2">
+      <span class="pt-3 ml-2 f-s">Faça autenticação</span>
+  </h5>
+  <hr/>
+  <form action="#" (ngSubmit)="onSubmit()" [formGroup]="formulario">
+      <div class="form-group">
+          <label for="username">
+              <i class="bx bx-at"></i>
+              <span>Username:</span>
+          </label>
+          <input id="username" class="form-control mt-1" type="text" formControlName="username" required
+          [ngClass]="valiationFormControl('username')"/>
+          <div class="invalid-feedback" *ngIf="isNotValidAndTouched('username')">
+            Por favor, informa o username é obrigatório
+          </div>
+          <div class="valid-feedback" *ngIf="isValidAndTouched('username')">
+            Validado
+          </div>
+      </div>
+      <div class="mt-4">
+          <label for="password">
+              <i class="bx bx-key"></i>
+              <span>Senha:</span>
+          </label>
+          <input id="password" class="form-control mt-1" type="password" formControlName="password" required autocomplete="current-password"
+          [ngClass]="valiationFormControl('password')"/>
+          <div class="invalid-feedback" *ngIf="isNotValidAndTouched('password')">
+            Por favor, informa senha é obrigatório
+          </div>
+          <div class="valid-feedback" *ngIf="isValidAndTouched('password')">
+            Validado
+          </div>
+      </div>
+      <div class="mt-4">
+          <button class="btn btn-outline-success" type="submit" *ngIf="formulario.valid; else desativado">
+              <i class="bx bx-log-in"></i>
+              <span>autenticação</span>
+          </button>
+          <ng-template #desativado>
+            <button class="btn btn-outline-secondary" [disabled]="!formulario.valid">
+              <i class="bx bx-log-in"></i>
+              <span>autenticação</span>
+            </button>
+          </ng-template>
+      </div>
+      <div class="mt-3">
+          <label for="remember_me" class="inline-flex items-center">
+              <input id="remember_me" type="checkbox" class="" name="remember">
+              <span class="ml-2 text-sm text-gray-600">lembra-se de mí.</span>
+          </label>
+      </div>
+      <div class="flex items-center justify-end mt-2 mb-2">
+          <a class="mb-2 t-d-n text-dark">
+              <i class="fas fa-key"></i>
+              <span class="ml-1">Não lembro da minha senha.</span>
+          </a>
+      </div>
+      <div class="mb-3">
+          <a class="mt-2 t-d-n text-dark">
+              <i class="fas fa-file-alt"></i>
+              <span class="ml-1">Não tenho nenhuma conta.</span>
+          </a>
+      </div>
+  </form>
+</section>

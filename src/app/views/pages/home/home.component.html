@@ -1,0 +1,391 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top border-bottom border-primary" id="nav">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#">eimath</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link active" (click)="from('')">
+                      <i class='bx bxs-home'></i>
+                      <span>Página inicial</span>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#service">
+                      <i class='bx bxs-hard-hat'></i>
+                      <span>Serviços</span>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#content">
+                      <i class='bx bxs-graduation'></i>
+                      <span>Conteúdo</span>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#about">
+                      <i class='bx bx-info-circle'></i>
+                      <span>Informações</span>
+                  </a>
+              </li>
+          </ul>
+          <form>
+              <button class="btn btn-light border border-primary" type="button"  (click)="from('math')">
+                  <i class='bx bx-calculator bx-tada' ></i>
+                  <span>cálculo</span>
+              </button>
+          </form>
+      </div>
+
+  </div>
+</nav>
+<header class="top-container position-relative w-100 bg-primary">
+  <section class="container">
+      <section class="row">
+          <div class="header-left col-md-6">
+              <h3 class="f-s-1r f6 text-white mt-5 text-center mb-4">
+                  <i class='bx bxs-hand bx-tada'></i>
+                  <span>Bem vindo</span>
+              </h3>
+              <p class="text-white f-s-1r t-j t-i-1r mb-4">
+                  Sistema de resolução de problemas de matemática, permite permutações de soluções de exercícios,
+                  usando este website irá resolver inumeros problemas matemática.
+              </p>
+              <div class="btn-acess m-auto mb-1 px-1 row w-75">
+                  <button class="btn btn-success col-md-5" (click)="from('login')">
+                      <i class='bx bx-log-in'></i>
+                      <span>Autenticação</span>
+                  </button>
+                  <a href="#" class="btn btn-warning col-md-6" aria-label="registory">
+                      <i class='bx bx-file'></i>
+                      <span>Cadastramento</span>
+                  </a>
+              </div>
+          </div>
+          <div class="header-right col-md-6">
+              <img src="assets/img/header-right.png" alt="" class="w-100 h-100">
+          </div>
+      </section>
+  </section>
+</header>
+
+<section class="top-container position-relative w-100 mt-5" id="service">
+  <div class="container">
+      <section class="row m-1">
+          <div class="service-left col-md-6">
+              <h2 class="f-s-1r f6 text-variant-primary">
+                  <i class='bx bxs-hard-hat bx-tada'></i>
+                  <span>Serviços</span>
+              </h2>
+              <p class="f-s-1r mb-3">Este site apresenta vários serviços, que podes fazer, como:</p>
+              <ul>
+                  <li class="f-s-1r mb-2">
+                      <i class='bx bx-check-circle text-success'></i>
+                      <span>Resolver problemas de matemática.</span>
+                  </li>
+                  <li class="f-s-1r mb-2">
+                      <i class='bx bx-check-circle text-success'></i>
+                      <span>Permutar soluções de problemas.</span>
+                  </li>
+                  <li class="f-s-1r mb-2">
+                      <i class='bx bx-check-circle text-success'></i>
+                      <span>comparações entre métedos.</span>
+                  </li>
+                  <li class="f-s-1r mb-2">
+                      <i class='bx bxs-x-circle text-danger'></i>
+                      <span>Gerar relatório.</span>
+                  </li>
+                  <li class="f-s-1r mb-2">
+                      <i class='bx bxs-x-circle text-danger'></i>
+                      <span>Criar grupo para colaboração em projectos.</span>
+                  </li>
+                  <li class="f-s-1r mb-2">
+                      <i class='bx bxs-x-circle text-danger'></i>
+                      <span>Elaboração de aulas e provas.</span>
+                  </li>
+                  <li class="f-s-1r mb-2">
+                      <i class='bx bxs-x-circle text-danger'></i>
+                      <span>Fazer comparações entre os métodos de resolução de problemas.</span>
+                  </li>
+              </ul>
+              <a href="#" class="btn btn-outline-primary mb-2">
+                  <i class="bx bx-plus"></i>
+                  <span>saiba mais</span>
+              </a>
+          </div>
+          <div class="service-right col-md-6">
+              <div class="services">
+                  <article class="service-item text-white p-2">
+                      <span class="bg-secondary m-2 p-1 f-s-1r f6 rounded-circle">
+                          <i class='bx bx-math bx-tada'></i>
+                      </span>
+                      <h5 class="mt-2">Resolução</h5>
+                      <p class="t-i-1r t-j">Podes, ter várias resoluções permuntando os exercícios.</p>
+                  </article>
+                  <article class="service-item text-white p-2">
+                      <span class="bg-warning m-2 p-1 f-s-1r f6 rounded-circle">
+                          <i class='bx bx-transfer-alt bx-tada'></i>
+                      </span>
+                      <h5 class="mt-2">Permutação</h5>
+                      <p class="t-i-1r t-j">Para cada tipo de exercício apresenta vários métodos para você testar.</p>
+                  </article>
+                  <article class="service-item text-white p-2">
+                      <span class="bg-success m-2 p-1 f-s-1r f6 rounded-circle">
+                          <i class='bx bx-highlight bx-tada'></i>
+                      </span>
+                      <h5 class="mt-2">Simplificações</h5>
+                      <p class="t-i-1r t-j">Sempre este sistema, tenta trazer a resolução mais simplificada, com todos os passos.</p>
+                  </article>
+                  <article class="service-item text-white p-2">
+                      <span class="bg-danger m-2 p-1 f-s-1r f6 rounded-circle">
+                          <i class='bx bxs-share bx-tada'></i>
+                      </span>
+                      <h5 class="mt-2">Colaboração</h5>
+                      <p class="t-i-1r t-j">Podes criar vários grupo para você gerenciar aulas, com os teus alunos ou amigos.</p>
+                  </article>
+              </div>
+          </div>
+      </section>
+  </div>
+</section>
+
+<section class="top-container position-relative w-100 bg-variant-primary mt-5" id="content">
+  <div class="container" >
+      <section class="row">
+          <div class="content-left col-md-5 text-white">
+              <h2 class="f-s-1r f6 mt-4">
+                  <i class='bx bxs-graduation bx-tada'></i>
+                  <span>Conteúdo</span>
+              </h2>
+              <div class="content-msg">
+                  <p class="t-j t-i-1r">
+                      O eimath resolver alguns dos problemas da matemática que estão apresentado na lista ( apenas o que estão
+                      marcados <i class='bx bxs-check-circle'></i> , e <i class='bx bxs-x-circle'></i> ainda não foi implementado,
+                      o sistema dará suporte no futuro próximo ou distante), <strong>por isso fica atento com as actualizações do sistema</strong>.
+                  </p>
+                  <a href="#" class="btn btn-outline-light mb-4">
+                      <i class="bx bx-plus"></i>
+                      <span>saiba mais</span>
+                  </a>
+              </div>
+          </div>
+          <div class="content-right col-md-7 text-dark">
+              <div class="content-lists">
+                  <div class="content-list">
+                      <div class="content-item">
+                          <i class='bx bxs-check-circle text-success'></i>
+                          <span>Fração.</span>
+                      </div>
+                      <div class="content-item subitems">
+                          <i class='bx bxs-down-arrow-circle text-dark'></i>
+                          <span>Função.</span>
+                          <ul class="content-subitems">
+                              <li>
+                                  <i class='bx bxs-check-circle text-success'></i>
+                                  <span>I grau.</span>
+                              </li>
+                              <li>
+                                  <i class='bx bxs-check-circle text-success'></i>
+                                  <span>II grau.</span>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="content-item">
+                          <i class='bx bxs-x-circle text-danger'></i>
+                          <span>Polinomio.</span>
+                      </div>
+                      <div class="content-item">
+                          <i class='bx bxs-x-circle text-danger'></i>
+                          <span>Radical.</span>
+                      </div>
+                  </div>
+                  <div class="content-list">
+                      <div class="content-item subitems">
+                          <i class='bx bxs-down-arrow-circle text-dark'></i>
+                          <span>Simplificação.</span>
+                          <ul class="content-subitems">
+                              <li>
+                                  <i class='bx bxs-x-circle text-danger'></i>
+                                  <span>Algébrica.</span>
+                              </li>
+                              <li>
+                                  <i class='bx bxs-check-circle text-success'></i>
+                                  <span>Aritmética.</span>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="content-item">
+                          <i class='bx bxs-x-circle text-danger'></i>
+                          <span>Matriz.</span>
+                      </div>
+                      <div class="content-item">
+                          <i class='bx bxs-x-circle text-danger'></i>
+                          <span>Limites.</span>
+                      </div>
+                      <div class="content-item">
+                          <i class='bx bxs-x-circle text-danger'></i>
+                          <span>Racionalização.</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+  </div>
+</section>
+
+<section class="top-container position-relative w-100 mt-5">
+  <div class="container">
+      <h2 class="f-s-1r f6 mb-4">
+          <i class='bx bx-info-circle bx-tada'></i>
+          <span>Informações</span>
+      </h2>
+      <div class="about-list">
+          <div class="about-item">
+              <h5 class="about-desc">
+                  <i class="bx bx-plus"></i>
+                  <span>O que é este sistema?</span>
+              </h5>
+              <p>
+                  O eimath é um sistema de resolução de problema de matemática, que permuta soluções para
+                  os exercícios.
+              </p>
+          </div>
+          <div class="about-item">
+              <h5 class="about-desc">
+                  <i class="bx bx-plus"></i>
+                  <span>Como funciona o sistema?</span>
+              </h5>
+              <p>
+                  <span>O eimath identifica os exercícios, por expressões regulares (regex), existe um conjunto de expressões matemática,
+                  que o sistema entende, para que o eimath resolva, deves respeitar bem (regex).</span>
+                  <br/>
+                  <a href="#" class="btn btn-outline-primary mt-1">ver mais</a>
+              </p>
+
+          </div>
+          <div class="about-item">
+              <h5 class="about-desc">
+                  <i class="bx bx-plus"></i>
+                  <span>O que posso fazer com este sistema?</span>
+              </h5>
+              <p>
+                  Podes usar este sistema, para <strong>estudos, gerenciar grupo de aulas</strong>, existe
+                  muitas funcionalidade que poderás imprimir relatórios, e compartilhamento de projecto.
+              </p>
+          </div>
+          <div class="about-item">
+              <h5 class="about-desc">
+                  <i class="bx bx-plus"></i>
+                  <span>Os resultados dos exercícios serão sempre o mesmo?</span>
+              </h5>
+              <p>
+                  <span>Não, nem sempre, isto depende do exercício e da sua parametrização, e pode ter caso que existe
+                  um factor complicante, mais calma isto não quer dizer que a resolução está errada</span>
+                  <br/>
+                  <a href="#" class="btn btn-outline-primary mt-1">ver mais</a>
+              </p>
+          </div>
+      </div>
+  </div>
+
+</section>
+
+<footer class="top-container position-relative w-100 bg-variant-primary mt-5">
+  <div class="container">
+      <div class="footer-seq">
+          <h4>eimath</h4>
+          <p class="t-j t-i-1r">
+              Este sistema existe para facilitar o seu trabalho, sua pesquisa e também podes sé divertir
+              aprendendo.
+          </p>
+      </div>
+      <div class="footer-seq">
+          <h4>PermaLinks</h4>
+          <ul class="permalinks">
+              <li class="">
+                  <a class=""  href="#">
+                      <i class='bx bxs-home bx-tada'></i>
+                      <span>Página inicial</span>
+                  </a>
+              </li>
+              <li class="">
+                  <a class="" href="#service">
+                      <i class='bx bxs-hard-hat bx-tada'></i>
+                      <span>Serviços</span>
+                  </a>
+              </li>
+              <li class="">
+                  <a class="" href="#content">
+                      <i class='bx bxs-graduation bx-tada'></i>
+                      <span>Conteúdo</span>
+                  </a>
+              </li>
+              <li class="">
+                  <a class="" href="#about">
+                      <i class='bx bx-info-circle bx-tada'></i>
+                      <span>Informações</span>
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div class="footer-seq">
+          <h4>Primacy</h4>
+          <ul class="privacy">
+              <li>
+                  <a href="#">
+                      <i class='bx bx-question-mark'></i>
+                      <span>Privacy Policy</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      <i class='bx bx-question-mark'></i>
+                      <span>Terms and conditions</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      <i class='bx bx-question-mark'></i>
+                      <span>Refund policy</span>
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div class="footer-seq">
+          <h4>Contact Us</h4>
+          <div>
+              <p>+244 987 564 231</p>
+              <p>school@gmail.com</p>
+              <ul class="footer-socials">
+                  <li>
+                      <a rel="noopener" href="https://www.facebook.com" target="_blank" aria-label="midea-social">
+                          <i class='bx bxl-facebook bx-tada'></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a rel="noopener" href="https://www.instagram.com" target="_blank" aria-label="midea-social">
+                          <i class='bx bxl-instagram-alt bx-tada'></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a rel="noopener" href="https://www.twitter.com" target="_blank" aria-label="midea-social">
+                          <i class='bx bxl-twitter bx-tada'></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a rel="noopener" href="https://www.github.com" target="_blank" aria-label="midea-social">
+                          <i class='bx bxl-github bx-tada'></i>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+  <div class="footer-copyright">
+      <small>Copyright &copy; eimath 2021</small>
+  </div>
+</footer>

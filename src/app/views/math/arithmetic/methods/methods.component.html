@@ -1,0 +1,21 @@
+<section class="p-1 m-2">
+  <div>
+    <div class="d-flex a-i-c gr">
+      <div>Os métodos de resolução para operação de soma entre duas frações: </div>
+      <div [innerHTML]="fractionSumEx"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 form-check" *ngFor="let item of fractionSum">
+        <input type="radio" formControlName="{{ item.group }}" id="{{ item.id }}" class="form-check-input"
+          *ngIf="item.check; else sumN" checked value="{{ item.value }}">
+        <ng-template #sumN>
+          <input type="radio" formControlName="{{ item.group }}" id="{{ item.id }}" class="form-check-input"
+            value="{{ item.value }}">
+        </ng-template>
+        <label for="{{ item.id }}" class="form-check-label">
+          <span>{{ item.desc }}</span>
+        </label>
+      </div>
+    </div>
+  </div>
+</section>

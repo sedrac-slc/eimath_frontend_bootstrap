@@ -1,0 +1,68 @@
+
+:root{
+    --bor: 1rem;
+    --bor-n: 0rem;
+}
+
+.home-link{
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.t-d-n{
+    text-decoration: none;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+}
+
+.ignora{
+    position: absolute;
+    right: 1%;
+    top: 1%;
+}
+
+.ignora a{
+    color: var(--bs-success);
+    text-decoration: none;
+}
+
+.bg-lateral {
+    top: 0;
+    width: 50vw;
+    height: 100%;
+    z-index: -20;
+    position: absolute;
+    border-top-right-radius: var(--bor);
+    border-bottom-right-radius: var(--bor);
+}
+
+.bg-lateral a{
+   display: flex;
+   align-items: center;
+   gap: 0.3rem;
+   font-weight: bold;
+}
+
+.mb-5{
+    margin-bottom: 8rem;
+}
+
+
+
+@media (max-width: 767px) {
+    .bg-lateral {
+        width: 100vw;
+        height: 50vh;
+        position: absolute;
+        border-top-right-radius: var(--bor-n);
+        border-bottom-right-radius: var(--bor-n);
+    }
+
+    .ignora a{
+        color: white;
+    }
+
+}

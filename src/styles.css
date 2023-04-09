@@ -1,1 +1,91 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  box-sizing: border-box;
+  border: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+ul{
+  list-style: none;
+}
+
+.top-container{
+  top: 3.1rem;
+}
+
+.j-c-c{
+  justify-content: center;
+}
+
+.a-i-c{
+  align-items: center;
+}
+
+.g-1r{
+  gap: 1rem;
+}
+
+.t-i-1r{
+  text-indent: 1rem;
+}
+
+.t-i-2r{
+  text-indent: 2rem;
+}
+
+.t-j{
+  text-align: justify;
+}
+
+.f-s-1r{
+  font-size: 1rem;
+}
+
+.f-s-2r{
+  font-size: 2rem;
+}
+
+.f-s-1r.f6{
+  font-size: 1.6rem;
+}
+
+.f-s-0r.f9{
+  font-size: 0.9rem;
+}
+
+.f-s-0r.f8{
+  font-size: 0.8rem;
+}
+
+.c-p{
+  cursor: pointer;
+}
+
+.t-d-u{
+  text-decoration: underline;
+}
+
+.p-r{
+  position: relative;
+}
+
+.p-a{
+  position: absolute;
+}
+
+.btn-none{
+  background: none;
+  border: none;
+}
+
+.a-i-c{
+  align-items: center;
+}
+
+.gr{
+  gap: 0.5rem;
+}
+
+.b-n{
+  border: none;
+}

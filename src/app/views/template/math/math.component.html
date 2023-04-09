@@ -1,0 +1,112 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top border-bottom border-primary" id="nav">
+  <div class="container-fluid">
+    <a class="navbar-brand ml-3" routerLink="/">eimath</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <button class="btn btn-danger btn-logaut" *ngIf="person.id != null" style="margin-right: 5px;" (click)="logaut()">
+          <i class='bx bx-log-in-circle'></i>
+          <span>Sair</span>
+        </button>
+    </div>
+  </div>
+</nav>
+
+<section class="position-relative top-container mt-2">
+  <div class="grid total-h">
+    <div class="grid-item grip-2 w-m-l">
+      <div class="fixed w-m-l" style="overflow-y: auto;">
+        <ul class="list-group">
+          <li class="list-group-item b-r-n">
+            <a class="t-d-n" routerLink="/math">
+              <i class='bx bxs-panel'></i>
+              <span class="text-dark">Regex</span>
+            </a>
+          </li>
+          <li class="list-group-item b-r-n" *ngIf="person.id != null">
+            <div class="d-flex g-1r">
+              <a class="t-d-n grid-3">
+                <i class='bx bx-group'></i>
+                <span class="text-dark">Grupo</span>
+              </a>
+              <div class="">
+                <i class='bx bx-caret-up-circle'></i>
+              </div>
+            </div>
+            <ul class="list-group sub">
+              <li class="list-group-item">
+                <a class="t-d-n" data-bs-toggle="modal" data-bs-target="#modalGroupScreen" (click)="openGrupoPainel('create')">
+                  <i class='bx bx-plus-circle text-primary'></i>
+                  <span class="text-dark">adicionar</span>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a class="t-d-n" data-bs-toggle="modal" data-bs-target="#modalGroupScreen" (click)="openGrupoPainel('view')">
+                  <i class='bx bx-right-indent text-primary'></i>
+                  <span class="text-dark">listar</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item b-r-n">
+            <div class="d-flex g-1r">
+              <a class="t-d-n grid-3" routerLink="/math">
+                <i class='bx bx-blanket'></i>
+                <span class="text-dark">Sumário</span>
+              </a>
+              <div class="">
+                <i class='bx bx-caret-up-circle'></i>
+              </div>
+            </div>
+            <ul class="list-group sub">
+              <li class="list-group-item">
+                <a class="t-d-n" routerLink="/arithmetic">
+                  <i class='bx bx-radio-circle-marked'></i>
+                  <span class="text-dark">Aritmética</span>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a class="t-d-n" routerLink="/function">
+                  <i class='bx bx-radio-circle-marked'></i>
+                  <span class="text-dark">Funções</span>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a class="t-d-n" routerLink="/radical">
+                  <i class='bx bx-radio-circle-marked'></i>
+                  <span class="text-dark">Radical</span>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a class="t-d-n" routerLink="/matriz">
+                  <i class='bx bx-radio-circle-marked'></i>
+                  <span class="text-dark">Matriz</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid-item grip-3 border-lateral">
+      <div class="container pt-1" id="center-content">
+        <ng-content select="#mathContentCenter"> </ng-content>
+
+      </div>
+    </div>
+    <div class="grid-item w-m-l-f">
+      <div class="fixed w-m-l-f">
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-container *ngIf="person.id != null">
+  <app-group [person]="person" [view]="action" [groupPage]="groupPage"></app-group>
+</ng-container>
+
+
+
