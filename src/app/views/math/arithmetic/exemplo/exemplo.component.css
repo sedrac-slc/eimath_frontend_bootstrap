@@ -1,0 +1,29 @@
+.arith-exemple{
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background: rgba(236, 233, 233, 0.1);
+}
+
+.arith-exemple .arith-key{
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  padding: 0.3rem;
+  position: relative;
+}
+
+.arith-exemple .arith-view{
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.arith-exemple .arith-key .arith-copy{
+  position: absolute;
+  right: 2rem;
+  top: -0.1rem;
+}
+
+.g-0-5r{
+  gap: 0.5rem;
+}

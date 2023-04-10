@@ -11,99 +11,7 @@
           <span>calcular</span>
         </button>
       </div>
-      <section class="border border-primary p-2 rounded mt-2" *ngIf="config">
-        <div class="p-1">
-          <div class="row a-i-c">
-            <div class="col-md-4">
-              <select formControlName="methodFractionSum" id="" class="form-control tex-dark">
-                <ng-container *ngFor="let item of fractionSumOrSub">
-                  <option [value]="item.value" *ngIf=" item.selected; else notSelectedFracSum" selected>
-                    {{ item.desc }}
-                  </option>
-                  <ng-template #notSelectedFracSum>
-                    <option [value]="item.value">
-                      {{ item.desc }}
-                    </option>
-                  </ng-template>
-                </ng-container>
-              </select>
-            </div>
-            <div class="col-md-8">Operação de soma entre duas frações.</div>
-          </div>
-          <hr/>
-          <div class="row a-i-c">
-            <div class="col-md-4">
-              <select formControlName="methodFractionSub" id="" class="form-control tex-dark">
-                <ng-container *ngFor="let item of fractionSumOrSub">
-                  <option [value]="item.value" *ngIf=" item.selected; else notSelectedFracSub" selected>
-                    {{ item.desc }}
-                  </option>
-                  <ng-template #notSelectedFracSub>
-                    <option [value]="item.value">
-                      {{ item.desc }}
-                    </option>
-                  </ng-template>
-                </ng-container>
-              </select>
-            </div>
-            <div class="col-md-8">Operação de subtração entre duas frações.</div>
-          </div>
-          <hr class=""/>
-          <div class="row a-i-c">
-            <div class="col-md-4">
-              <select formControlName="methodArithmeticSum" id="" class="form-control tex-dark">
-                <ng-container *ngFor="let item of arithSumOrSub">
-                  <option [value]="item.value" *ngIf=" item.selected; else notSelectedArithSum" selected>
-                    {{ item.desc }}
-                  </option>
-                  <ng-template #notSelectedArithSum>
-                    <option [value]="item.value">
-                      {{ item.desc }}
-                    </option>
-                  </ng-template>
-                </ng-container>
-              </select>
-            </div>
-            <div class="col-md-8">Operação de soma entre infinitas frações.</div>
-          </div>
-          <hr/>
-          <div class="row a-i-c">
-            <div class="col-md-4">
-              <select formControlName="methodArithmeticSub" id="" class="form-control tex-dark">
-                <ng-container *ngFor="let item of arithSumOrSub">
-                  <option [value]="item.value" *ngIf=" item.selected; else notSelectedArithSub" selected>
-                    {{ item.desc }}
-                  </option>
-                  <ng-template #notSelectedArithSub>
-                    <option [value]="item.value">
-                      {{ item.desc }}
-                    </option>
-                  </ng-template>
-                </ng-container>
-              </select>
-            </div>
-            <div class="col-md-8">Operação de subtração entre infinitas frações.</div>
-          </div>
-          <hr/>
-          <div class="row a-i-c">
-            <div class="col-md-4">
-              <select formControlName="methodArithmeticSumOrSub" id="" class="form-control tex-dark">
-                <ng-container *ngFor="let item of arithSumOrSubFull">
-                  <option [value]="item.value" *ngIf=" item.selected; else notSelectedArithSubFull" selected>
-                    {{ item.desc }}
-                  </option>
-                  <ng-template #notSelectedArithSubFull>
-                    <option [value]="item.value">
-                      {{ item.desc }}
-                    </option>
-                  </ng-template>
-                </ng-container>
-              </select>
-            </div>
-            <div class="col-md-8">Operação de soma e subtração entre infinitas frações.</div>
-          </div>
-        </div>
-      </section>
+      <app-methods-arithmetic [arithmeticForm]="arithmeticForm" [config]="config"></app-methods-arithmetic>
     </form>
     <hr />
     <section>
@@ -124,6 +32,15 @@
         </div>
       </div>
       <hr />
+      <section class="p-2 bg-def rounded">
+        <p class="t-j">
+          <strong>A aritmética</strong> (da palavra grega ἀριθμός, arithmós,[a] "número") é o ramo mais elementar e
+          antigo da matemática, lida com as operações possíveis entre os números; é utilizada por quase todo ser humano:
+          seja em tarefas cotidianas, seja em tarefas científicas ou negociais. As quatro operações matemáticas mais
+          elementares (adição, subtração, multiplicação e divisão) são a aritmética elementar.
+        </p>
+      </section>
+      <hr />
       <section>
         <div class="topico-group">
           <h5 class="topico">
@@ -136,49 +53,19 @@
         </div>
         <div class="topico-body">
           <ol>
-            <li>
-              <p>Para o eimath resolver o problema de aritmética deves fornecer a expressão (esta deve ser uma expressão válida para o eimathRegex) no formulário acima.</p>
-              <span>Aviso</span>
-              <ul>
-                <li>
-                  <i class='bx bx-checkbox-square'></i>
-                  <span>Se a expressão fornecida não é validado pelo eimathRegex, isto quer dizer que não irá resolver o
-                    problema.</span>
-                </li>
-                <li>
-                  <i class='bx bx-checkbox-square'></i>
-                  <span>Caso não saibas o que eimathRegex, <a href="/">clica aqui</a>.</span>
-                </li>
-              </ul>
+            <li class="t-j">
+              Ensira a expressão aritmética no campo acima.
             </li>
-            <li class="mt-1">
-              <span>Opcional: podes parametrizar como desejas que a resolução seja executada, ciclando no botão de
-                configuração.</span>
+            <li class="t-j">
+              Opcional: fazer as configurações de resolução, caso não faças o sistema irá fazer de forma aliatória.
             </li>
-            <li class="mt-1">
-              <span>Para ver a resolução do problema apenas deves clicar no butão (calcular)</span>
+            <li class="t-j">
+              Clicar no butão (calcular)
             </li>
           </ol>
+          <app-arithmetic-exemplo></app-arithmetic-exemplo>
         </div>
       </section>
-      <hr />
-      <section>
-        <div class="topico-group">
-          <h5 class="topico">
-            <i class="bx bx-info"></i>
-            <span>Conceitos:</span>
-          </h5>
-          <div class="f-r topico-down-up">
-            <i class='bx bx-caret-down-circle bx-sm bx-fade-down-hover'></i>
-          </div>
-          <div class="topico-body">
-            <p class="t-j">
-            A aritmética (da palavra grega ἀριθμός, arithmós,[a] "número") é o ramo mais elementar e antigo da matemática, lida com as operações possíveis entre os números; é utilizada por quase todo ser humano: seja em tarefas cotidianas, seja em tarefas científicas ou negociais. As quatro operações matemáticas mais elementares (adição, subtração, multiplicação e divisão) são a aritmética elementar.
-            </p>
-          </div>
-        </div>
-      </section>
-
     </section>
   </div>
 </app-math-template>

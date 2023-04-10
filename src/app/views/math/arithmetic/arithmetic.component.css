@@ -67,3 +67,16 @@
 .fraction.numflex .numerator{
   min-width: max-content;
 }
+
+
+.config-opt{
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  position: relative;
+}
+
+.config-exemple{
+  position: absolute;
+  right: 0.2rem;
+}

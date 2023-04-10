@@ -1,20 +1,129 @@
-<section class="p-1 m-2">
-  <div>
-    <div class="d-flex a-i-c gr">
-      <div>Os métodos de resolução para operação de soma entre duas frações: </div>
-      <div [innerHTML]="fractionSumEx"></div>
+<section class="border border-primary p-2 rounded mt-2" *ngIf="config">
+  <div class="p-1">
+    <div class="config-opt">
+      <div class="config-select">
+        <select [(ngModel)]="arithmeticForm.value.methodFractionSum" class="form-control tex-dark">
+          <ng-container *ngFor="let item of fractionSumOrSub">
+            <option [value]="item.value" *ngIf=" item.selected; else notSelectedFracSum" selected>
+              {{ item.desc }}
+            </option>
+            <ng-template #notSelectedFracSum>
+              <option [value]="item.value">
+                {{ item.desc }}
+              </option>
+            </ng-template>
+          </ng-container>
+        </select>
+      </div>
+      <div class="config-text">
+        Operação de soma entre duas frações.
+      </div>
+      <div class="config-exemple">
+        <button type="button" class="btn btn-sm btn-outline-primary"
+          ngbTooltip="ver exemplo" [closeDelay]="500" placement="start"
+          (click)="script('#arith-exemple-1')">
+          <i class='bx bx-show'></i>
+        </button>
+      </div>
     </div>
-    <div class="row">
-      <div class="col-md-4 form-check" *ngFor="let item of fractionSum">
-        <input type="radio" formControlName="{{ item.group }}" id="{{ item.id }}" class="form-check-input"
-          *ngIf="item.check; else sumN" checked value="{{ item.value }}">
-        <ng-template #sumN>
-          <input type="radio" formControlName="{{ item.group }}" id="{{ item.id }}" class="form-check-input"
-            value="{{ item.value }}">
-        </ng-template>
-        <label for="{{ item.id }}" class="form-check-label">
-          <span>{{ item.desc }}</span>
-        </label>
+    <hr />
+    <div class="config-opt">
+      <div class="config-select">
+        <select [(ngModel)]="arithmeticForm.value.methodFractionSub" id="" class="form-control tex-dark">
+          <ng-container *ngFor="let item of fractionSumOrSub">
+            <option [value]="item.value" *ngIf=" item.selected; else notSelectedFracSub" selected>
+              {{ item.desc }}
+            </option>
+            <ng-template #notSelectedFracSub>
+              <option [value]="item.value">
+                {{ item.desc }}
+              </option>
+            </ng-template>
+          </ng-container>
+        </select>
+      </div>
+      <div class="config-select">Operação de subtração entre duas frações.</div>
+      <div class="config-exemple">
+        <button type="button" class="btn btn-sm btn-outline-primary"
+          ngbTooltip="ver exemplo" [closeDelay]="500" placement="start"
+          (click)="script('#arith-exemple-2')">
+          <i class='bx bx-show'></i>
+        </button>
+      </div>
+    </div>
+    <hr class="" />
+    <div class="config-opt">
+      <div class="config-select">
+        <select [(ngModel)]="arithmeticForm.value.methodArithmeticSum" id="" class="form-control tex-dark">
+          <ng-container *ngFor="let item of arithSumOrSub">
+            <option [value]="item.value" *ngIf=" item.selected; else notSelectedArithSum" selected>
+              {{ item.desc }}
+            </option>
+            <ng-template #notSelectedArithSum>
+              <option [value]="item.value">
+                {{ item.desc }}
+              </option>
+            </ng-template>
+          </ng-container>
+        </select>
+      </div>
+      <div class="config-text">Operação de soma entre infinitas frações.</div>
+      <div class="config-exemple">
+        <button type="button" class="btn btn-sm btn-outline-primary"
+          ngbTooltip="ver exemplo" [closeDelay]="500" placement="start"
+          (click)="script('#arith-exemple-3')">
+          <i class='bx bx-show'></i>
+        </button>
+      </div>
+    </div>
+    <hr />
+    <div class="config-opt">
+      <div class="config-select">
+        <select [(ngModel)]="arithmeticForm.value.methodArithmeticSub" id="" class="form-control tex-dark">
+          <ng-container *ngFor="let item of arithSumOrSub">
+            <option [value]="item.value" *ngIf=" item.selected; else notSelectedArithSub" selected>
+              {{ item.desc }}
+            </option>
+            <ng-template #notSelectedArithSub>
+              <option [value]="item.value">
+                {{ item.desc }}
+              </option>
+            </ng-template>
+          </ng-container>
+        </select>
+      </div>
+      <div class="config-text">Operação de subtração entre infinitas frações.</div>
+      <div class="config-exemple">
+        <button type="button" class="btn btn-sm btn-outline-primary"
+          ngbTooltip="ver exemplo" [closeDelay]="500" placement="start"
+          (click)="script('#arith-exemple-4')">
+          <i class='bx bx-show'></i>
+        </button>
+      </div>
+    </div>
+    <hr />
+    <div class="config-opt">
+      <div class="config-select">
+        <select [(ngModel)]="arithmeticForm.value.methodArithmeticSumOrSub" id="" class="form-control tex-dark">
+          <ng-container *ngFor="let item of arithSumOrSubFull">
+            <option [value]="item.value" *ngIf=" item.selected; else notSelectedArithSubFull" selected>
+              {{ item.desc }}
+            </option>
+            <ng-template #notSelectedArithSubFull>
+              <option [value]="item.value">
+                {{ item.desc }}
+              </option>
+            </ng-template>
+          </ng-container>
+        </select>
+      </div>
+      <div class="config-text">Operação de soma e subtração entre infinitas frações.</div>
+      <div class="config-exemple">
+        <button type="button" class="btn btn-sm btn-outline-primary"
+          ngbTooltip="ver exemplo" [closeDelay]="500" placement="start"
+          (click)="script('#arith-exemple-5')">
+          <i class='bx bx-show'></i>
+        </button>
       </div>
     </div>
   </div>

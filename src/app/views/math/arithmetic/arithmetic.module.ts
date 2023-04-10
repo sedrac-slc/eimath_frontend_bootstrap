@@ -9,11 +9,13 @@ import { ArithmeticComponent } from './arithmetic.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MathTemplateModule } from '../../template/math/math.module';
 import { MethodsComponent } from './methods/methods.component';
+import { ExemploComponent } from './exemplo/exemplo.component';
 
 @NgModule({
   declarations: [
     ArithmeticComponent,
-    MethodsComponent
+    MethodsComponent,
+    ExemploComponent
   ],
   imports: [
     CommonModule,

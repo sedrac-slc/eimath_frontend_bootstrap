@@ -89,3 +89,7 @@ ul{
 .b-n{
   border: none;
 }
+
+.bg-def{
+  background: rgba(216, 213, 213, 0.1);
+}

@@ -15,24 +15,24 @@ import 'src/assets/ts/topico_down_up';
 export class ArithmeticComponent implements OnInit {
   mathResult: MathResponse = new MathResponse();
   arithmeticForm!: FormGroup;
-  config: boolean = false;
+  config: boolean = true;
 
   fractionSumOrSub = [
-    { value: "random", desc: "Aliatório", selected: true},
-    { value: "mmc", desc: "Minímo multiplo comum", selected: false},
+    { value: "random", desc: "Aliatório", selected: true },
+    { value: "mmc", desc: "Minímo multiplo comum", selected: false },
     { value: "crossSystem", desc: "Sistema cruzado", selected: false }
   ];
 
   arithSumOrSub = [
-    { value: "random", desc: "Aliatório", selected: true},
-    { value: "minMultipliCommon", desc: "Minímo multiplo comum", selected: false},
+    { value: "random", desc: "Aliatório", selected: true },
+    { value: "minMultipliCommon", desc: "Minímo multiplo comum", selected: false },
     { value: "sequencial", desc: "Sequencial", selected: false }
   ];
 
   arithSumOrSubFull = [
-    { value: "random", desc: "Aliatório", selected: true},
+    { value: "random", desc: "Aliatório", selected: true },
     { value: "grouping", desc: "Agrupamento", selected: false },
-    { value: "minMultipliCommon", desc: "Minímo multiplo comum", selected: false},
+    { value: "minMultipliCommon", desc: "Minímo multiplo comum", selected: false },
     { value: "sequencial", desc: "Sequencial", selected: false }
   ];
 
@@ -50,15 +50,14 @@ export class ArithmeticComponent implements OnInit {
       methodArithmeticSub: ['random', Validators.required],
       methodArithmeticSumOrSub: ['random', Validators.required],
     });
-
   }
 
   solve() {
-   if (this.arithmeticForm.valid) {
+    if (this.arithmeticForm.valid) {
       this.arithmeticService
         .solve(this.arithmeticForm.value)
         .subscribe((response) => this.mathResult = response);
-    }else{
+    } else {
       Swal.fire({
         icon: 'warning',
         title: 'Validação',
@@ -68,25 +67,19 @@ export class ArithmeticComponent implements OnInit {
     }
   }
 
+  script(id:any) {
+    const exampleSection = document.querySelector(id);
+    if (exampleSection) {
+      const distance = exampleSection.offsetTop;
+      window.scroll({
+        top: distance,
+        behavior: "smooth"
+      });
+    }
+  }
+
 }
 
-/*
-  fractionSumEx = `
-  <section class="fraction-arithmetic">
-  <div class="fraction proper">
-    <div class="numerator">1</div>
-    <div class="separator"></div>
-    <div class="denominator">5</div>
-  </div>
-  <div class="fraction proper">
-    <div class="signal plus">+</div>
-    <div class="numerator">2</div>
-    <div class="separator"></div>
-    <div class="denominator">3</div>
-  </div>
-</section>
-`;
-*/
 
 
 
