@@ -24,6 +24,11 @@
   top: -0.1rem;
 }
 
+.arith-exemple.foco{
+  background: rgba(110, 109, 109, 0.1);
+  box-shadow: 1px 1px 10px 1px;
+}
+
 .g-0-5r{
   gap: 0.5rem;
 }

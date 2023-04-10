@@ -35,6 +35,12 @@ export class MethodsComponent {
     const exampleSection = document.querySelector(id);
     if (exampleSection) {
       const distance = exampleSection.offsetTop;
+      const arithExemple = document.querySelectorAll('.arith-exemple');
+      arithExemple.forEach( exp =>{
+        exp.classList.remove("foco");
+        if( "#"+exp.id == id)
+          exp.classList.add("foco");
+      });
       window.scroll({
         top: distance,
         behavior: "smooth"

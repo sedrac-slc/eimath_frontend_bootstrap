@@ -4,8 +4,9 @@
       <strong>1. Expressão:</strong>
       <span id="exp-1">3/5+2/3</span>
     </div>
-    <div class="arith-copy" data-exp="exp-1">
-      <button class="btn btn-outline-primary btn-sm">
+    <div class="arith-copy" data-exp="exp-1" (click)="copyExpression('exp-1')"
+      ngbTooltip="copiar expressão" [closeDelay]="500" placement="start">
+      <button class="btn btn-outline-primary btn-sm btn-copy" id="btn-exp-1">
         <i class='bx bx-copy'></i>
       </button>
     </div>
@@ -33,8 +34,9 @@
       <strong>2. Expressão:</strong>
       <span id="exp-2">-2/3-5/2</span>
     </div>
-    <div class="arith-copy" data-exp="exp-2">
-      <button class="btn btn-outline-primary btn-sm">
+    <div class="arith-copy" data-exp="exp-2" (click)="copyExpression('exp-2')"
+      ngbTooltip="copiar expressão" [closeDelay]="500" placement="start">
+      <button class="btn btn-outline-primary btn-sm btn-copy" id="btn-exp-2">
         <i class='bx bx-copy'></i>
       </button>
     </div>
@@ -63,8 +65,9 @@
       <strong>3. Expressão:</strong>
       <span id="exp-3">2/5+2/3+5/2+2/7</span>
     </div>
-    <div class="arith-copy" data-exp="exp-3">
-      <button class="btn btn-outline-primary btn-sm">
+    <div class="arith-copy" data-exp="exp-3" (click)="copyExpression('exp-3')"
+      ngbTooltip="copiar expressão" [closeDelay]="500" placement="start">
+      <button class="btn btn-outline-primary btn-sm btn-copy" id="btn-exp-3">
         <i class='bx bx-copy'></i>
       </button>
     </div>
@@ -104,8 +107,9 @@
       <strong>4. Expressão:</strong>
       <span id="exp-4">-3/5-7/3-5/2-8/3</span>
     </div>
-    <div class="arith-copy" data-exp="exp-4">
-      <button class="btn btn-outline-primary btn-sm">
+    <div class="arith-copy" data-exp="exp-4" (click)="copyExpression('exp-4')"
+      ngbTooltip="copiar expressão" [closeDelay]="500" placement="start">
+      <button class="btn btn-outline-primary btn-sm btn-copy" id="btn-exp-4">
         <i class='bx bx-copy'></i>
       </button>
     </div>
@@ -144,10 +148,11 @@
   <div class="arith-key">
     <div class="arith-expression d-flex g-0-5r">
       <strong>5. Expressão:</strong>
-      <span id="exp-1">7/5+2/3-5/2-5/8</span>
+      <span id="exp-5">7/5+2/3-5/2-5/8</span>
     </div>
-    <div class="arith-copy" data-exp="exp-1">
-      <button class="btn btn-outline-primary btn-sm">
+    <div class="arith-copy" data-exp="exp-5" (click)="copyExpression('exp-5')"
+      ngbTooltip="copiar expressão" [closeDelay]="500" placement="start">
+      <button class="btn btn-outline-primary btn-sm btn-copy" id="btn-exp-5">
         <i class='bx bx-copy'></i>
       </button>
     </div>
