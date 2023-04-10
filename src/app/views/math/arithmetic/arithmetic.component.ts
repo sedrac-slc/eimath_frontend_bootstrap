@@ -17,25 +17,6 @@ export class ArithmeticComponent implements OnInit {
   arithmeticForm!: FormGroup;
   config: boolean = true;
 
-  fractionSumOrSub = [
-    { value: "random", desc: "Aliatório", selected: true },
-    { value: "mmc", desc: "Minímo multiplo comum", selected: false },
-    { value: "crossSystem", desc: "Sistema cruzado", selected: false }
-  ];
-
-  arithSumOrSub = [
-    { value: "random", desc: "Aliatório", selected: true },
-    { value: "minMultipliCommon", desc: "Minímo multiplo comum", selected: false },
-    { value: "sequencial", desc: "Sequencial", selected: false }
-  ];
-
-  arithSumOrSubFull = [
-    { value: "random", desc: "Aliatório", selected: true },
-    { value: "grouping", desc: "Agrupamento", selected: false },
-    { value: "minMultipliCommon", desc: "Minímo multiplo comum", selected: false },
-    { value: "sequencial", desc: "Sequencial", selected: false }
-  ];
-
   constructor(
     private arithmeticService: ArithmeticService,
     private formBuilder: FormBuilder
@@ -63,17 +44,6 @@ export class ArithmeticComponent implements OnInit {
         title: 'Validação',
         text: 'Por verifica se os campos foram bem preenchidos!',
         footer: '<a class="b-n" href="/">Voltar a página principal?</a>'
-      });
-    }
-  }
-
-  script(id:any) {
-    const exampleSection = document.querySelector(id);
-    if (exampleSection) {
-      const distance = exampleSection.offsetTop;
-      window.scroll({
-        top: distance,
-        behavior: "smooth"
       });
     }
   }
