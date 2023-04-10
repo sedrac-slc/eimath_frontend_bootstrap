@@ -2,7 +2,7 @@
   <div id="mathContentCenter" class="pt-2">
     <form [formGroup]="arithmeticForm" (ngSubmit)="solve()" class="mb-2">
       <div class="form-group d-flex grip">
-        <button type="button" class="btn btn-outline-primary d-flex j-c-c a-i-c">
+        <button type="button" class="btn btn-outline-primary d-flex j-c-c a-i-c" (click)="config = !config">
           <i class='bx bx-cog'></i>
         </button>
         <input type="text" class="form-control mr-2" name="expression" formControlName="expression" required />
@@ -11,7 +11,7 @@
           <span>calcular</span>
         </button>
       </div>
-      <section class="border border-primary p-2 rounded mt-2">
+      <section class="border border-primary p-2 rounded mt-2" *ngIf="config">
         <div class="p-1">
           <div class="row a-i-c">
             <div class="col-md-4">
@@ -137,8 +137,7 @@
         <div class="topico-body">
           <ol>
             <li>
-              <p>Para o eimath resolver o problema de aritmética deves fornecer a expressão (esta deve ser uma expressão
-                válida para o eimathRegex) no formulário acima.</p>
+              <p>Para o eimath resolver o problema de aritmética deves fornecer a expressão (esta deve ser uma expressão válida para o eimathRegex) no formulário acima.</p>
               <span>Aviso</span>
               <ul>
                 <li>
@@ -173,7 +172,9 @@
             <i class='bx bx-caret-down-circle bx-sm bx-fade-down-hover'></i>
           </div>
           <div class="topico-body">
-
+            <p class="t-j">
+            A aritmética (da palavra grega ἀριθμός, arithmós,[a] "número") é o ramo mais elementar e antigo da matemática, lida com as operações possíveis entre os números; é utilizada por quase todo ser humano: seja em tarefas cotidianas, seja em tarefas científicas ou negociais. As quatro operações matemáticas mais elementares (adição, subtração, multiplicação e divisão) são a aritmética elementar.
+            </p>
           </div>
         </div>
       </section>

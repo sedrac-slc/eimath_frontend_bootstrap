@@ -15,6 +15,7 @@ import 'src/assets/ts/topico_down_up';
 export class ArithmeticComponent implements OnInit {
   mathResult: MathResponse = new MathResponse();
   arithmeticForm!: FormGroup;
+  config: boolean = false;
 
   fractionSumOrSub = [
     { value: "random", desc: "Aliatório", selected: true},
