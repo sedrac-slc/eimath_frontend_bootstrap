@@ -7,11 +7,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MathTemplateModule } from '../../template/math/math.module';
+import { ExemploComponent } from './exemplo/exemplo.component';
 
 
 @NgModule({
   declarations: [
-    RadicalComponent
+    RadicalComponent,
+    ExemploComponent
   ],
   imports: [
     CommonModule,
